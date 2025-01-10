@@ -1,0 +1,30 @@
+
+.circle {
+  background-color: orange;
+  width: 12vh;
+  height: 12vh;
+  border-radius: 50%;
+  position: relative;  /* Necessary for using transform */
+  display: flex;
+  justify-content: center;
+align-items: center;
+}
+
+.circle2 {
+  background-color: red;
+  animation: slideUp 0.5s ease-out forwards;
+}
+.circle3 {
+  background-color: aqua;
+  animation: slideUp 1s ease-out forwards;
+}
+
+/* Keyframes for the slide-up animation */
+@keyframes slideUp {
+  0% {
+    transform: translateY(15vh); /* Start from below the viewport */
+  }
+  100% {
+    transform: translateY(0); /* End at the original position */
+  }
+}
