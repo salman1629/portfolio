@@ -1,16 +1,12 @@
-import { createBrowserRouter,RouterProvider } from "react-router-dom"
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Layout from "./views/Layout"
-import IntroPage from "./components/IntroPage"
-import Resume from "./components/Resume"
-import Projects from "./components/Projects"
-import Contact from "./components/Contact"
-
+import "./App.css";
+import Layout from "./views/Layout";
+import IntroPage from "./components/IntroPage";
+import Resume from "./components/Resume";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import AppContextProvider from "./context/AppContext";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +17,7 @@ const router = createBrowserRouter([
         path: "/",
         element: <IntroPage />,
       },
-      
+
       {
         path: "/resume",
         element: <Resume />,
@@ -38,12 +34,12 @@ const router = createBrowserRouter([
   },
 ]);
 
-
 function App() {
-
   return (
-    <RouterProvider router={router} />
-  )
+    <AppContextProvider>
+      <RouterProvider router={router} />;
+    </AppContextProvider>
+  );
 }
 
-export default App
+export default App;

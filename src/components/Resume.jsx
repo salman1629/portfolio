@@ -1,6 +1,13 @@
-export default function () {
+import { useContext } from "react";
+import { AppContext } from "../context/AppContext";
+
+export default function Resume () {
+
+  const {isTransitioning} = useContext(AppContext)
+
   return (
     <div className="h-[inherit] p-14 flex flex-col gap-36 justify-center items-center">
+
       <p className="font-semibold text-5xl self-start px-36">Resume</p>
       <div className="flex justify-between px-36">
         <div className="flex-1">

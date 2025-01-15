@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import styles from "./IntroPage.module.css";
 import { useNavigate } from "react-router-dom";
+import { AppContext } from "../context/AppContext";
 
 export default function IntroPage() {
   const navigate = useNavigate();
   const [isAnimate, setIsAnimate] = useState(false);
   const [contentHeight,setContentHeight] = useState()
-
+  const { isTransitioning } = useContext(AppContext)
+ 
   const handleClick = (page) => {
     navigate(`/${page}`);
   };
